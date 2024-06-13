@@ -28,10 +28,12 @@ from business_intelligence.views.get_brand_vehicle import get_vehicle_brands_vie
 from business_intelligence.views.get_vehicle_year import get_vehicle_years_view
 from business_intelligence.views.get_year_maintenance import get_maintenance_years_view
 
+from business_intelligence.views.database import check_database_connection
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('database/', check_database_connection,name='database'),
     
     path('kpi/servicios-adicionales/', servicios_barra, name='servicios_adicionales'),
     path('kpi/vehiculos-mantenimiento/', maintenance_pastel, name='vehiculos-mantenimiento'),
